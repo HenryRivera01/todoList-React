@@ -1,16 +1,24 @@
+import { useState } from "react";
 
-export const Input = () => {
+type InputProps = {
+  onAddTask: (taskName: string) => void;
+};
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>){
-        e.preventDefault();
-        console.log('enviaste');
-    }
+export const Input = ({ onAddTask } : InputProps) => {
+  const [task, setTask] = useState<string>("");
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    onAddTask(task);
+    console.log("enviaste la tarea: ", task);
+    setTask("");
+  }
 
   return (
     <div>
-        <form onSubmit={handleSubmit} action="submit">
-            <input type="text" />
-        </form>
+      <form onSubmit={handleSubmit} action="submit">
+        <input onChange={(e) => setTask(e.target.value)} required type="text" />
+      </form>
     </div>
-  )
-}
+  );
+};
