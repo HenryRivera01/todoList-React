@@ -1,15 +1,9 @@
 import { useState } from "react"
 import { Input } from "./Input"
+import { TaskView } from "./TaskView";
+import type { Task } from "./TaskType";
 
 //TodoList manage the tasks array
-
-//create the type of tasks with her attributes
-type Task = {
-    id: number;
-    name: string,
-    isEditing: boolean,
-    isComplete: boolean
-}
 
 
 export const TodoList = () => {
@@ -29,9 +23,26 @@ export const TodoList = () => {
         console.log(tasks);
     }
 
+    function checkTask(id:number){
+        const taskComplete = tasks.find((task)=>{
+            return task.id === id
+        })
+        if(taskComplete){
+            taskComplete.isComplete = !taskComplete.isComplete
+        }
+        console.log(taskComplete);
+    }
+
+    function deleteTask(id:number){
+        const filteredTasks = tasks.filter((task) => task.id !== id)
+        setTasks(filteredTasks)
+    }
+
+//Insert the Input component and send the addTask function
   return (
     <div>
-        < Input onAddTask={addTask}/> //Insert the Input component and send the addTask function
+        < Input onAddTask={addTask}/>
+        < TaskView tasks={tasks} checkTask={checkTask} deleteTask={deleteTask}/>
     </div>
   )
 }
