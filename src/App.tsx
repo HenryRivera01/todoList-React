@@ -12,8 +12,10 @@ function App() {
   }
 
   return (
-    <>
+    <section className="main-container">
+      <h1 className="search-tittle">Search a component</h1>
       <InputText onsubmit={changeComponent} />
+      <article className="component-container">
       {component === "tabs" ? (
         <Tabs />
       ) : component === "todolist" ? (
@@ -21,7 +23,8 @@ function App() {
       ) : (
         <p>Componente no encontrado</p>
       )}
-    </>
+      </article>
+    </section>
   );
 }
 

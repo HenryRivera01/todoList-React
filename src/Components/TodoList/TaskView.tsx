@@ -15,7 +15,7 @@ export const TaskView = ({ tasks, checkTask, deleteTask}: TaskProps) => {
   }
 
   return (
-    <div>
+    <div className="singleTask">
       {tasks.map((task) => {
         return ( 
             <SingleTask key={task.id} task={task} checkTask={checkTask} deleteTask={deleteTask}/>

@@ -41,8 +41,11 @@ export const TodoList = () => {
 //Insert the Input component and send the addTask function
   return (
     <div>
+        <h2 className="todolist-tittle">To-do List</h2>
         < Input onAddTask={addTask}/>
+        <div className="tasks-container">
         < TaskView tasks={tasks} checkTask={checkTask} deleteTask={deleteTask}/>
+        </div>
     </div>
   )
 }

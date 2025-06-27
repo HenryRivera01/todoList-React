@@ -17,7 +17,7 @@ export const Input = ({ onAddTask } : InputProps) => {
   return (
     <div>
       <form onSubmit={handleSubmit} action="submit">
-        <input value={task} onChange={(e) => setTask(e.target.value)} required type="text" />
+        <input className="search-input" placeholder="Run, homework..." value={task} onChange={(e) => setTask(e.target.value)} required type="text" />
       </form>
     </div>
   );

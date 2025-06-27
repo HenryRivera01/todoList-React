@@ -9,10 +9,12 @@ type SingleTaskProps = {
 export const SingleTask = ({task, checkTask, deleteTask}:SingleTaskProps) => {
     const {id, name} = task
   return (
-    <div>
-        <p>{name}</p>
+    
+    <div className="task-container">
         <input type="checkbox" onChange={()=>checkTask(id)}/>
-        <button onClick={()=>deleteTask(id)}>Delete</button>
+        <p>{name}</p>
+        <button className="deleteTaskButton" onClick={()=>deleteTask(id)}>Delete</button>
     </div>
+    
   )
 }
