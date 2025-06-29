@@ -32,7 +32,7 @@ export const Tabs = () => {
         "https://wieck-nissanao-production.s3.amazonaws.com/photos/1881878489d07c2348ed3eea3e2db203fb32f996/preview-928x522.jpg",
       content:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, maxime. Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, totam!",
-    },
+    }
   ];
 
   const [tab, setTab] = useState(1);

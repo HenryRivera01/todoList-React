@@ -16,13 +16,11 @@ function App() {
       <h1 className="search-tittle">Search a component</h1>
       <InputText onsubmit={changeComponent} />
       <article className="component-container">
-      {component === "tabs" ? (
-        <Tabs />
-      ) : component === "todolist" ? (
-        <TodoList />
-      ) : (
-        <p>Componente no encontrado</p>
-      )}
+        {component === "tabs" && <Tabs />}{" "}
+        {component === "todolist" && <TodoList />}
+        {component != "tabs" && component != "todolist" && (
+          <p>Componente no encontrado</p>
+        )}
       </article>
     </section>
   );
